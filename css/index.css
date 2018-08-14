@@ -1,0 +1,286 @@
+@charset "utf-8";
+/* CSS Document */
+	body,p,ol,ul,li,h1,h2,h3,h4,h5,h6,form,table,td,th,dl,dt,dd,fieldset,legend,input{
+		margin:0;
+		padding:0;
+	}
+	html{
+		font-size: 26.67vw;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		background: #f4f4f4;
+		display: -webkit-flex;
+		-webkit-flex-direction:column;
+	}
+	a{
+		text-decoration: none;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	img{
+		border: none;
+	}
+			
+/*header*/		
+	.header{
+		width:100%;
+		height:0.34rem;
+		background: #34d882;
+		padding-top: 0.05rem;
+	}
+	.header_left{
+		width:0.4rem;
+		height:0.27rem;
+		float: left;
+		margin-left:0.1rem;
+	}
+	.header_left p{
+		font-size: 0.13rem;
+		color: white;
+		line-height: 0.27rem;
+	}
+	.header_right{
+		width: 3rem;
+		height:0.27rem;
+		float: left; 
+		margin-left:0.14rem;
+	}
+	.header_left img{
+		display: block;
+		width: 0.11rem;
+		height:0.1rem; 
+		margin-top:-0.17rem;
+		float: right;
+	}
+	.header_right input{
+		display: block;
+		width: 3rem;
+		height:0.24rem;
+		border-radius: 0.1rem;
+		border: none;
+		background:#5fdda0 url(../img/11.png) no-repeat 0.1rem;
+		background-size:0.15rem;
+
+	}
+
+
+	.content_center{
+		box-sizing: border-box;
+		width: 100%;
+		-webkit-flex:1;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}	
+/* slideshow 轮播图  */
+	.slideshow{
+		width:100%;
+		height:2.85rem;
+		background: blue;
+	}
+
+/* vip */
+	.vip{
+		width: 100%;
+		height:1.48rem;
+		background: white;
+	}	
+	.vip_content{
+		width: 3.52rem;
+		height: 1.48rem;
+		display: -webkit-flex;
+		-webkit-flex-wrap:wrap;
+		margin:0 auto;
+	}
+	.vip_t{
+		width: 25%;
+	}
+
+	.vip_content img{
+		display: block;
+		width: 0.3rem;
+		height: 0.3rem;
+		margin:0 auto 0.08rem;
+	}
+	.vip_content span{
+		display: block;
+		font-size: 0.12rem;
+		color:#333333;
+		text-align: center;
+	}
+
+	.new {
+		width: 100%;
+		height:0.33rem;
+		margin-bottom: 0.08rem;
+		background: white;
+	}
+	.new_content{
+		width:100%;
+		height:0.2rem;
+	}
+	.new_content img{
+		width: 0.76rem;
+		height:0.2rem;
+		float:left;
+		margin:0.07rem 0.14rem 0.06rem 0.14rem;
+	}
+	.new_content p{
+		font-size: 0.11rem;
+		float:left;
+		margin-top:0.09rem;
+		font-weight: 900;
+	}
+
+
+	.orange{
+		width:100%;
+		height:1.71rem;
+		background:white;
+		margin-bottom:0.07rem;
+	}
+	.orange_t{
+		display: flex;
+		overflow-x: scroll;
+		background:white;
+	}
+	.orange_t li{
+		width:1.08rem;
+		height:1.71rem;
+		background:white;
+		position: relative;
+	}
+	.orange_t li img:nth-child(1){
+		width:0.3rem;
+		height:0.3rem;
+		position: absolute;
+		margin-left:0.14rem;
+		z-index: 5;
+	}
+	.orange_t li img:nth-child(2){
+		width:0.95rem;
+		height:0.95rem;
+		margin-left:0.14rem;
+		top:-0.2rem;
+		position: relative;
+	}
+	.orange_t p{
+		font-size: 0.12rem;
+		margin-top:-0.2rem;
+		margin-left:0.26rem;
+	}
+	.orange_t h5{
+		font-size: 0.12rem;
+		margin-top: 0.18rem;
+		font-weight: 100;
+		margin-left:0.26rem;
+		color:red;
+	}
+	.orange_t h5 span{
+		color:#8b8b8b;
+	}
+
+	.tp{
+		width: 100%;
+		height: 1.48rem;
+		background: url(../img/21.png);
+		background-size: 100% 1.48rem;
+	}
+
+
+/* footer */
+
+	.footer{
+		width: 3.75rem;
+		height:1.54rem;
+		margin-bottom: 0.05rem;
+		background: white;
+		padding-top: 0.15rem;
+	}
+	.footer_1{
+		width:100%;
+		height:1.16rem;
+		background: white;
+	}
+	
+	.footer_left{
+		width:1.13rem;
+		height:1.13rem;
+		float: left;
+	}
+	.footer_left img:nth-child(1){
+		width:0.3rem;
+		height:0.3rem;
+		position: absolute;
+		margin-left:0.14rem;
+		z-index: 5;
+	}
+	.footer_left img:nth-child(2){
+		width:1.13rem;
+		height:1.13rem;
+		margin-left:0.14rem;
+		top:-0.2rem;
+	}
+	.footer_right{
+		width:2rem;
+		height:1.13rem;
+		margin-left:1.4rem;
+	}
+	.footer_right h3{
+		font-size: 0.15rem;
+		margin-top: 0.13rem;
+	}
+	.footer_right h4{
+		color: #999798;
+		font-size: 0.12rem;
+		margin-bottom: 0.45rem;
+	}
+	.footer_right h5{
+		color: red;
+		font-size: 0.14rem;
+	}
+	.footer_right h5 span{
+		color: #8a8889;
+		font-size: 0.12rem;
+	}
+	
+
+/* bottom 底部 */
+ .bottom{
+ 	width: 100%;
+ 	height:0.5rem;
+ 	display: -webkit-flex;
+ 	align-items: center;
+ 	background: white;
+	justify-content: space-around;
+ } 
+ .bottom img{
+ 	width:0.35rem ;
+ 	height:0.25rem;
+ 	display: block;
+ 	margin-bottom:0.02rem;
+
+ }
+ .bottom a span{
+ 	color: black;
+	display: block;
+	font-size: 0.12rem;
+	text-align: center;
+}
+.bottom a:nth-child(1) span{
+	color:#28cd80;
+}
+
+
+html body .top{
+	position: fixed;
+	bottom:0.5rem;
+	right:0.1rem;
+	z-index:11111;
+	width: 0.45rem; 
+	color:#e2e2e2;
+	display: none;
+}
