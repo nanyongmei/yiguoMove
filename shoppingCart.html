@@ -196,43 +196,29 @@
 </html>	
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$(".content_1_top_left .button_img_one").click(function(){
-
-
-				//input后的span
-				var num1=parseInt($(this).parent().next().children(".content_1_top_right_right").children(".content_1_cost").children(".content_1_cost_right").children(".content_span").html());
-				//满减后的span
-				var num2=parseFloat($(this).parent().parent().next().children(".content_1_bottom_wz").children(".content_1_bottom_span").children().html());
-				var num3=parseFloat((num1*num2)*100)/100;
-				$(this).parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span_2").children("h").html(num3);
-			});
-			
-		});
-
-			
-
 				$(".content_1_top_left").click(function(){
 					if($(this).children(".button_img_one").css("display")=="none"){
-						isnone($(this));
-						totalmoney();
+						isnone($(this));//调用单行按钮状态(状态为未选中)
+						totalmoney();//计算总价
 
 					}else if($(this).children(".button_img_one").css("display")=="block"){
-						isblock($(this));
-						totalmoney();
+						isblock($(this));//调用单行按钮状态(状态为选中)
+						totalmoney();//计算总价
 						
 					}
 				});
 				
 
+				//点击全选按钮
 				$(".count_left").click(function(){
 					if($(".count_img1").css("display")=="block"){
 						$(".count_img1").css({"display":"none"});
 						$(".count_img2").css({"display":"inline-block"});
-						isblock($(".content_1_top_left"));
+						isblock($(".content_1_top_left"));//调用单行按钮(状态为选中)
 
 
 					}else{
+						//循环每个单行按钮计算是否有选中
 						var count=0;
 						for(var i=0;i<$(".button_img_one").length;i++){
 							if($($(".button_img_one")[i]).css("display")=="block"){
@@ -240,54 +226,51 @@
 								break;
 							}
 						}
-						if(count==0){
+						if(count==0){//如果未被选中
 							$(".count_img2").css({"display":"none"});
 							$(".count_img1").css({"display":"inline-block"});
-							isnone($(".content_1_top_left"));
-						}else{
+							isnone($(".content_1_top_left"));//调用单行按钮（状态为未选中）
+						}else{//如果有被选中
 							$(".count_img1").css({"display":"none"});
 							$(".count_img2").css({"display":"inline-block"});
-							isblock($(".content_1_top_left"));
+							isblock($(".content_1_top_left"));//调用单行按钮（状态为被选中）
 						}
 					}
-					totalmoney();
+					totalmoney();//调用计算总价
 					
 				});
 
+				//单行按钮（状态为未选中）
 				function isnone(isnoneDom){
 
-					isnoneDom.children(".button_img_tow").css("display","none");
-						isnoneDom.children(".button_img_one").css("display","block");
-						isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children(".content_1_bottom_wz").css({"color":"#333333"});
-						isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span_2").css({"display":"none"});
-						isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span").css({"display":"inline-block"});
+					isnoneDom.children(".button_img_tow").css("display","none");//第2张图为空
+					isnoneDom.children(".button_img_one").css("display","block");//第一张图选中
+					isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children(".content_1_bottom_wz").css({"color":"#333333"});//满减变颜色
+					isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span_2").css({"display":"none"});//节省的隐藏
+					isnoneDom.children(".button_img_tow").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span").css({"display":"inline-block"});//满减条件出现
 				}
+				//单行按钮（状态为被选中）
 				function isblock(isblockDom){
-					isblockDom.children(".button_img_one").css("display","none");
-						isblockDom.children(".button_img_tow").css("display","block");
-						isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children(".content_1_bottom_wz").css({"color":"#20c57f"});
-						isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span_2").css({"display":"inline-block",color:"#333333"});
-						isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span").css({"display":"none"});
+					isblockDom.children(".button_img_one").css("display","none");//第1张图为空
+					isblockDom.children(".button_img_tow").css("display","block");//第2张图选中
+					isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children(".content_1_bottom_wz").css({"color":"#20c57f"});//选中满减出现
+					isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span_2").css({"display":"inline-block",color:"#333333"});//节省的隐藏
+					isblockDom.children(".button_img_one").parent().parent().next(".content_1_bottom").children().children(".content_1_bottom_span").css({"display":"none"});//满减条件隐藏
 				}
-
-					
-				
-
-
-			
-
 			
 				//点减号
 				$(".minus_left").click(function(){
 					var spanDom=$(this).next("span");
-					jiajian(spanDom,-1);
+					jiajian(spanDom,-1);//调用加减按钮的函数
 
 				});
 				//点加号
 				$(".add_right").click(function(){
 					var spanDom=$(this).prev("span");
-					jiajian(spanDom,1);
+					jiajian(spanDom,1);//调用加减按钮的函数
 				});
+
+				//点击加减按钮（内部调用总价、购物车上的豆豆、）
 				function jiajian(spanDom,n){
 					var count=parseInt(spanDom.html());
 					count=count+n;
@@ -295,22 +278,20 @@
 						count=1;
 					}
 					spanDom.html(count);
-					totalmoney();
-					number();
+					totalmoney();//调用计算总价的函数
+					number();//调用购物车上面的点点
 
-						//input后的span
-					var num1=parseInt(spanDom.html());
-					//满减后的span
-					console.log(num1);
-					var num2=parseFloat(spanDom.parents(".content_1").children(".content_1_bottom").children(".content_1_bottom_wz").children(".content_1_bottom_span").children("b").html());
-					console.log(num2);
+					
+					var num1=parseInt(spanDom.html());//加减按钮点击的数量(input后的span)
+					/*console.log(num1)*/;
+					var num2=parseFloat(spanDom.parents(".content_1").children(".content_1_bottom").children(".content_1_bottom_wz").children(".content_1_bottom_span").children("b").html());//满减优惠的价位
+					/*console.log(num2);*/
 					var num3=parseFloat((num1*num2)*100)/100;
-					console.log(num3);
-					/*spanDom.parent(".content_1_cost_right").parent(".content_1_cost").parent(".content_1_top_right_right").parent(".content_1_top_right").parent(".content_1_top").next(".content_1_bottom").children(".content_1_bottom_wz").children(".content_1_bottom_span_2").children("h").html(num3);*/
-					spanDom.parents(".content_1_top").next(".content_1_bottom").children(".content_1_bottom_wz").children(".content_1_bottom_span_2").children("h").html(num3);
+					/*console.log(num3);*/
+					spanDom.parents(".content_1_top").next(".content_1_bottom").children(".content_1_bottom_wz").children(".content_1_bottom_span_2").children("h").html(num3);//满减优惠的价格
 				}
 
-
+				//购物车上面定位的计算数量
 				function number(){
 					var rows=$(".content").children();
 					var lmoney=0;
@@ -324,20 +305,21 @@
 				function totalmoney(){
 					var totalmoney = 0;
 					var number=0;
-					$(".content_1").each(function(i,item){
-						if($(".button_img_tow",item).css("display")=="block"){
-							totalmoney+=parseInt(($(".content_1_cost_p1_span",item).text()*$(".content_span",item).text())*100)/100;
-							number+=parseInt($(".content_span",item).text());
-						}
+					//循环每一个盒子
+					$(".content_1").each(function(){
+						if($(this).find(".button_img_tow").css("display")=="block"){
+							totalmoney+=parseInt($(this).find(".content_1_cost_p1_span").text()*$(this).find(".content_span").text());
+							number+=parseInt($(this).find(".content_span").text());
+						}//////
 
 					});
-					$(".count_center_num").html(totalmoney);
-					$(".count_right_num").html(number);
-					isbao(totalmoney);
+					$(".count_center_num").html(totalmoney);//计算总共的价位（传总价）
+					$(".count_right_num").html(number);//计算总共的数量（传number）
+					isbao(totalmoney);//最上面的包邮条件（传总价计算  判断是否包邮）
 				}
 
+				//判断是否包邮
 				function isbao(totalmoney){
-
 					if(totalmoney>=100){
 						$(".header_p").css({"display":"none"});
 						$(".header_p1").css({"display":"block"});
@@ -349,12 +331,13 @@
 						$(".bao").html(difnum);
 					}
 				}
+				//删除
 				$(".trash").click(function(){
 					if(window.confirm("亲,确定要删除吗?")){
 						$(this).parents(".content_1").remove();
 					}
-					totalmoney();
-					number();
+					totalmoney();//重新计算总价
+					number();//重新计算定位数量
 				});		
 				
 				
