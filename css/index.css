@@ -273,6 +273,9 @@
 .bottom a:nth-child(1) span{
 	color:#28cd80;
 }
+.bottom a:nth-child(5) span{
+	margin-left: -0.05rem;
+}
 
 
 html body .top{

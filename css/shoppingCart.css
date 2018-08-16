@@ -1,0 +1,362 @@
+@charset "utf-8";
+/* CSS Document */
+	body,p,ol,ul,li,h1,h2,h3,h4,h5,h6,form,table,td,th,dl,dt,dd,fieldset,legend,input{
+		margin:0;
+		padding:0;
+	}
+	html{
+		font-size: 26.67vw;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		background: #f4f4f4;
+		display: -webkit-flex;
+		-webkit-flex-direction:column;
+	}
+	a{
+		text-decoration: none;
+		display: block;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	img{
+		border: none;
+		display: block;
+	}
+/* header */
+	.header{
+		width:100%;
+		height:0.39rem;
+		background:#fff9eb;
+		border-bottom:1px solid #ffd6a0;
+	}
+	.header_wz{
+		height:0.39rem;
+		width:2.19rem;
+		margin-left: 0.17rem;
+	}
+	.header_wz p:nth-child(1){
+		color:#333333;
+		font-size: 0.12rem;
+		line-height: 0.39rem;
+	}
+	
+	.header_wz span{
+		color:#ff6454;
+		font-size: 0.12rem;
+		font-weight:100;
+	}
+	.header_wz p:nth-child(2){
+		color:#333333;
+		font-size: 0.12rem;
+		font-weight:100;
+		line-height: 0.39rem;
+		display: none;
+	}
+
+
+
+
+	/* content */
+
+	.content{
+		width:100%;
+		height:5.2rem;
+		margin-top: 0.1rem;
+		background:#f4f4f4;
+	}
+	.content_1{
+		width:100%;/* 
+		height:1.31rem; */
+		border-bottom:1px solid #dddddd;
+		background: white;
+	}
+	.content_1_top{
+		width:100%;
+		height:1.05rem;
+		display: flex;
+	}
+	.content_1_top_left{
+		width:0.37rem;
+		height:1.01rem;
+	}
+	/* 选中的 */
+	.content_1_top_left img{
+		width:0.17rem;
+		height:0.17rem;
+		margin: 0.41rem auto;
+
+	}
+	.button_img_one{
+		display: block;
+	}
+	.button_img_tow{
+		display: none;
+	}
+	.content_1_top_right{
+		flex:1;
+		border-bottom:1px solid #dddddd;
+	}
+	.content_1_top_right_left{
+		width:0.9rem;
+		height:1.01rem;
+		position: relative;
+		float:left;
+	}
+	.content_1_top_right_left img{
+		width: 0.5rem;
+		height: 0.5rem;
+		position:absolute;
+		top:0;
+		right:0;
+		bottom: 0;
+		left:0;
+		margin:auto;
+	}
+	/* 右边详情 */
+	.content_1_top_right_right{
+		width: 2.475rem;
+		height:1.01rem;
+		float:left;
+	}
+	.content_1_top_right_right_top{
+		width:100%;
+		height:0.454rem;
+	}
+	.content_1_top_right_right_top p{
+		font-size: 0.12rem;
+		color:#333333;
+		float:left;
+		width:1.89rem;
+		line-height: 0.2rem;
+		margin-top: 0.05rem;
+	}
+	/* 删除 */
+	.content_1_top_right_right_top .trash{
+		width:0.15rem;
+		height: 0.15rem;
+		float:right;
+		margin-right: 0.12rem;
+		margin-top:0.1rem;
+	}
+	
+
+	/* 直降 */
+	.content_1_depreciate{
+		width:0.42rem;
+		height:0.17rem;
+		background:white;
+		border:2px solid #11b57c;
+		border-radius:0.17rem;
+	}
+	.content_1_depreciate p{
+		font-size: 0.12rem;
+		text-align: center;
+		line-height: 0.17rem;
+		color: #11b57c;
+	}
+
+	/* 价格div */
+	.content_1_cost{
+		width: 100%;
+		height:0.35rem;
+	}
+	.content_2_cost{
+		margin-top: 0.2rem;
+	}
+	.content_1_cost_left{
+		width: 0.8rem;
+		height:0.22rem;
+		padding-top: 0.08rem;
+		float:left;
+		display: flex;
+	}
+	.content_1_cost_left p:nth-child(1){
+		color:#ff6353;
+		font-size: 0.12rem;
+	}
+	.content_1_cost_left p:nth-child(2){
+		color:#cccccc;
+		font-size: 0.12rem;
+		text-decoration: line-through;
+		margin-left:0.05rem;
+	}
+
+	/* 按钮 加减 */
+	.content_1_cost_right{
+		width: 0.9rem;
+		height:0.22rem;
+		float:right;
+	}
+	/* 减号 */
+	.minus_left{
+		width:0.2rem;
+		height:0.22rem;
+		background: white;
+		border:1px solid #dddddd;
+		border-radius: 0.04rem 0 0 0.04rem;
+		float: left;
+		outline: none;
+	}
+	/* span 中间的数值 */
+	.content_span{
+		display:block;
+		width: 0.35rem;
+		height:0.2rem;
+		border-top:1px solid #dddddd;
+		border-bottom:1px solid #dddddd;
+		background: white;
+		font-size: 0.12rem;
+		text-align: center;
+		color:#333333;
+		float: left;
+		line-height: 0.2rem;
+	}
+	/* 加号 */
+	.add_right{
+		width:0.2rem;
+		height:0.22rem;
+		background: white;
+		border:1px solid #dddddd;
+		border-radius: 0 0.04rem 0.04rem 0;
+		float: left;
+		outline: none;
+	}
+
+	/* 满减 */
+	.content_1_bottom{
+		width:100%;
+		height:0.3rem;
+		background: white;
+	}
+	.content_1_bottom p{
+		font-size:0.12rem;
+		color:#808080;
+		line-height: 0.3rem;
+		margin-left: 0.37rem
+	}
+	.content_1_bottom_span{
+		color:#cccccc;
+		margin-left: 0.08rem;
+	}
+	.content_1_bottom_span_2{
+		color:#cccccc;
+		margin-left: 0.08rem;
+		display: none;
+	}
+
+/* count 计算价位 */
+	.count{
+		width: 100%;
+		height:0.47rem;
+		background: white;
+		border-top: 1px solid #d5d5d5;
+		border-bottom: 2px solid #d5d5d5;
+		margin-top: 0.1rem;
+		display: flex;
+	}
+	.count_left{
+		width: 0.57rem;
+		display: flex;
+	}
+	.count_left img{
+		width:0.17rem;
+		height:0.17rem;
+		margin-left: 0.09rem;
+		margin-top:0.14rem;
+
+	}
+	.count_left img:nth-child(2){
+		display: none;
+	}
+	.count_left p{
+		font-size: 0.12rem;
+		color: #333333;
+		margin-top:0.14rem;
+	}
+	.count_center{
+		width:1.48rem;
+		height:0.47rem;
+		margin-left: 0.61rem;
+	}
+	.count_center p{
+		font-size: 0.12rem;
+		color: #333333;
+		line-height: 0.18rem;
+	}
+	.count_center .count_center_num{
+		font-size: 0.12rem;
+		color: #ff6353;
+		font-weight: 900;
+	}
+	.count_center p:nth-child(2){
+		color:#999999;
+		margin-left:0.37rem;
+	}
+	.count_right{
+		width:1.09rem;
+		height:0.44rem;
+		background:#ff6353;
+	}
+	.count_right p{
+		font-size: 0.15rem;
+		color: white;
+		text-align: center;
+		line-height: 0.44rem;
+	}
+	
+
+
+
+
+
+
+/* bottom 底部 */
+ .bottom{
+ 	width: 100%;
+ 	height:0.5rem;
+ 	display: -webkit-flex;
+ 	align-items: center;
+ 	background: white;
+	justify-content: space-around;
+ } 
+ .bottom img{
+ 	width:0.35rem ;
+ 	height:0.25rem;
+ 	display: block;
+ 	margin-bottom:0.02rem;
+
+ }
+ .bottom a span{
+ 	color: black;
+	display: block;
+	font-size: 0.12rem;
+	text-align: center;
+}
+.bottom a:nth-child(4) span{
+	color:#28cd80;
+}
+.bottom a:nth-child(5) span{
+	margin-left: -0.05rem;
+}
+.bottom a:nth-child(4){
+	position: relative;
+}
+.bottom .shoppingSpan{
+	display: block;
+	width: 0.16rem;
+	height:0.16rem;
+	position: absolute;
+	background: #fb3d3d;
+	color:white;
+	font-size: 0.13rem;
+	line-height: 0.14rem;
+	text-align: center;
+	font-weight: 900;
+	border-radius: 50%;
+	top:0.03rem;
+	left:0.25rem;
+}
